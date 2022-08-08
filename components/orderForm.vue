@@ -69,7 +69,7 @@ export default {
             nameErrorText : '',
             addressErrorText : '',
             cityErrorText : '',
-            emailErrorText : '',
+            emailErrorText : ''
 
         }
     }, 

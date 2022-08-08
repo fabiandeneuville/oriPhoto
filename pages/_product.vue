@@ -2,6 +2,8 @@
     
     <div class="product__page">
 
+        <loader v-if="loading"></loader>
+
         <page-header></page-header>
 
         <h1 class="product__page__heading">Présentation de l'appareil {{ name }}</h1>
@@ -23,13 +25,14 @@
 </template>
 
 <script>
+import Loader from '../components/loader.vue'
 
 import PageFooter from '../components/pageFooter.vue'
 import pageHeader from '../components/pageHeader.vue'
 import ProductDetails from '../components/productDetails.vue'
 
 export default {
-  components: { pageHeader, PageFooter, ProductDetails },
+  components: { pageHeader, PageFooter, ProductDetails, Loader },
     name:'productPage',
     data(){
         return {
@@ -38,14 +41,16 @@ export default {
             description : '',
             price : 0,
             imageUrl : '',
-            lenses : []
+            lenses : [],
+            loading : true
         }
     },
     created(){
 
         this.products = fetch(`https://api.orinoco.stevenoyer.fr/api/cameras/${this.$route.query.id}`)
-        .then(response => response.json())
+        .then((response) => response.json())
         .then((data) => {
+            this.loading = false;
             this.id = data._id;
             this.name = data.name;
             this.description = data.description;

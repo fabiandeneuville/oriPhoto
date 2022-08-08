@@ -4,7 +4,7 @@
 
         <h2 class="products__heading">Nos appareils en stock</h2>
 
-        <p v-if="$fetchState.pending">Loading ....</p>
+        <loader v-if="$fetchState.pending"></loader>
 
         <p v-else-if="$fetchState.error">Error while fetching products</p>
 
@@ -30,10 +30,11 @@
 </template>
 
 <script>
+import Loader from './loader.vue'
 import productCard from './productCard.vue'
 
 export default {
-  components: { productCard },
+  components: { productCard, Loader },
     name: 'productsList',
 
     data(){

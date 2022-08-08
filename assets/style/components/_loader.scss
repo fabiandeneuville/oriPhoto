@@ -1,0 +1,40 @@
+.loader {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0px;
+    bottom: 0px;
+    left:0px;
+    right: 0px;
+    background-color: rgba(0,0,0,0.8);
+
+    &__container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        animation: rotation;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+    }
+
+    &__ball {
+        position: relative;
+        width: 25px;
+        height: 25px;
+        background-color: $color-tertiary;
+        border-radius: 50%;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        color: $color-tertiary;
+    }
+}
+
