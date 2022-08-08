@@ -4,11 +4,10 @@
     grid-template-rows: 2;
     justify-content: center;
     align-items: center;
-    width: 90%;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
 
-    @include media-max(768px){
+    @include media-max(992px){
         display: flex;
         flex-direction: column;
     }

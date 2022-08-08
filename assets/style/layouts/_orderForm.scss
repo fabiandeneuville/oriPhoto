@@ -5,7 +5,7 @@
     background-color: lightgray;
     grid-column: 3/4;
 
-    @include media-max(768px){
+    @include media-max(992px){
         width: 100%;
     }
 
