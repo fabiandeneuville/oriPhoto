@@ -7,9 +7,13 @@
 
 @import'./variables/colors';
 
+@import'./animations/animations.scss';
+
 @import'./layouts/pageHeader';
 @import'./layouts/productPage';
 @import'./layouts/productsList';
 @import'./layouts/productCard';
 @import'./layouts/productDetails';
 @import'./layouts/pageFooter';
+
+@import'./components/banner';

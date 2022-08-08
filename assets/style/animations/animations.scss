@@ -1,0 +1,11 @@
+@keyframes displayHeading {
+    from {
+        opacity: 0;
+        transform: translate(10%, 10%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+}
