@@ -7,6 +7,10 @@
             <p>{{ getCartQuantity }} {{ article }}</p>
         </div>
 
+        
+
+
+
 
     </div>
 
