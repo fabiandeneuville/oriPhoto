@@ -1,0 +1,15 @@
+@import'./base/reset';
+@import'./base/fonts';
+
+@import'./mixins/mediaQueries';
+@import'./mixins/shadow';
+@import'./mixins/gradients';
+
+@import'./variables/colors';
+
+@import'./layouts/pageHeader';
+@import'./layouts/productPage';
+@import'./layouts/productsList';
+@import'./layouts/productCard';
+@import'./layouts/productDetails';
+@import'./layouts/pageFooter';

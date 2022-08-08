@@ -1,0 +1,19 @@
+{
+    "name": "oriphoto",
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "generate": "nuxt generate",
+        "start": "nuxt start"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/free-solid-svg-icons": "^6.1.2",
+        "@nuxtjs/fontawesome": "^1.1.2",
+        "nuxt": "^2.15.8"
+    },
+    "devDependencies": {
+        "sass": "^1.54.3",
+        "sass-loader": "^10.3.1"
+    }
+}
