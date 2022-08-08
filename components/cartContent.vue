@@ -19,6 +19,7 @@
                 v-bind:quantity='item.quantity'
                 >
                 </cart-item>
+                <hr>
             </li>
         </ul>
 
