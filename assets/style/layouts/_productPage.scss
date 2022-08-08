@@ -1,3 +1,9 @@
 .product__page {
     background-color: $color-primary;
+
+    &__heading {
+        padding: 25px 25px 10px;
+        text-align: center;
+        color: #f1f1f1;
+    }
 }

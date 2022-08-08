@@ -3,6 +3,8 @@
     <div class="product__page">
 
         <page-header></page-header>
+
+        <h1 class="product__page__heading">Présentation de l'appareil {{ name }}</h1>
         
         <product-details
         v-bind:id="id"
