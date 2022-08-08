@@ -43,7 +43,7 @@ export default {
     data(){
         return {
             message: '',
-            quantity: '',
+            quantity: '1',
             selected: ''
         }
     },
@@ -56,8 +56,25 @@ export default {
         'id'
     ],
     methods : {
-        addToCart(){
-            
+        addToCart(e){
+
+            e.preventDefault()
+            let quantityPicked = parseInt(this.quantity, 10)
+            if(quantityPicked < 1 || quantityPicked > 5 || this.selected === ''){
+                this.message = "Veuillez indiquer une quantité comprise en 1 et 5 appareils et sélectionner un objectif"
+            } else {
+                let product = {
+                    id : this.id,
+                    name : this.name,
+                    quantity : quantityPicked,
+                    selected : this.selected,
+                    price : this.price,
+                    imageUrl : this.imageUrl
+                }
+                this.$store.commit('addToCart', product)
+                this.message = "Ajouté au panier"
+                
+            }
         }
     }
 }

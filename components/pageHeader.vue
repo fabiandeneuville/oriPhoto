@@ -53,7 +53,7 @@ export default {
     },
     computed: {
         getCartQuantity(){
-
+            return this.$store.state.cartTotalQuantity
         }
     }
 
