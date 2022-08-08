@@ -1,0 +1,15 @@
+.orderBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    @include media-max(992px){
+        display: flex;
+        flex-direction: column;
+    }
+}
