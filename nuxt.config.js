@@ -4,6 +4,10 @@ export default {
         '@/assets/style/main.scss'
     ],
 
+    modules : [
+        '@nuxtjs/axios'
+    ],
+
     buildModules : [
         '@nuxtjs/fontawesome'
     ],

@@ -8,7 +8,7 @@
     margin: 0 auto;
     max-width: 1200px;
 
-    @include media-max(992px){
+    @include media-max(768px){
         display: flex;
         flex-direction: column;
     }
