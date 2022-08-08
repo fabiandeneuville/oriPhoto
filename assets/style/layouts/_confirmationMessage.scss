@@ -1,0 +1,16 @@
+.confirmation {
+    padding : 25px;
+
+    &__heading {
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        margin: 10px 0;
+
+        &.orderId {
+            color: $color-tertiary;
+            font-size: 18px;        
+        }
+    }
+}

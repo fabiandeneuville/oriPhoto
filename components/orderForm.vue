@@ -35,6 +35,7 @@
         </div>
 
         <button v-on:click="sendForm" v-if="formIsValid" class="order__form__submit__btn">Valider</button>
+        <button v-if="!formIsValid" class="order__form__submit__btn disabled">Valider</button>
 
     </form>
 
