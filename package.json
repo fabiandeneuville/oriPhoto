@@ -3,8 +3,8 @@
     "scripts": {
         "dev": "nuxt",
         "build": "nuxt build",
-        "generate": "nuxt generate",
-        "start": "nuxt start"
+        "start": "nuxt start",
+        "heroku-postbuild": "npm run build"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.36",
