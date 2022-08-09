@@ -23,6 +23,9 @@ export default {
   components: { pageHeader, PageFooter, OrderBlock },
     name: 'cartPage',
     head : {
+      htmlAttrs: {
+        lang: 'fr'
+      },
       title : 'Panier - oriPhoto',
       meta : [
         { charset: 'utf-8' },

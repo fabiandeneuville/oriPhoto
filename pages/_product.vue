@@ -47,6 +47,9 @@ export default {
     },
     head(){
         return {
+            htmlAttrs: {
+                lang: 'fr'
+            },
             title : `${this.name} - oriPhoto`,
             meta : [
                 { charset: 'utf-8' },

@@ -21,6 +21,9 @@ export default {
   components: { pageHeader, PageFooter, ContactForm },
     name:'contactPage',
     head : {
+      htmlAttrs: {
+        lang: 'fr'
+      },
       title : 'Contact - oriPhoto',
       meta : [
         { charset: 'utf-8' },

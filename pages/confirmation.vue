@@ -17,6 +17,9 @@ export default {
   components: { pageFooter, PageHeader, ConfirmationMessage },
     name: 'confirmationPage',
     head : {
+      htmlAttrs: {
+        lang: 'fr'
+      },
       title : 'Commande validée - oriPhoto',
       meta : [
         { charset: 'utf-8' },
