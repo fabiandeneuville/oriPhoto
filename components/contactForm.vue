@@ -1,6 +1,14 @@
 <template>
     
     <div class="contact">
+
+        <modale-box
+        v-if="showModale"
+        v-bind:message="modaleMessage"
+        v-on:closeModale="closeModale"
+        >
+        </modale-box>
+
         <h1 class="contact__heading">Nous contacter</h1>
 
         <p class="contact__text">Vous n'avez pas trouvé l'appareil photo vintage de vos rêves ou souhaitez simplement nous poser une question ?</p>
@@ -35,10 +43,10 @@
 
             <div class="contact__form__block">
                 <label class="contact__form__block__label" for="message">Votre message</label>
-                <textarea class="contact__form__block__textarea" name="message" id="message" spellcheck="false" placeholder="Votre message ...."></textarea>
+                <textarea v-model="message" class="contact__form__block__textarea" name="message" id="message" spellcheck="false" placeholder="Votre message ...."></textarea>
             </div>
             
-            <button v-if="formIsValid" class="submit-btn">Envoyer</button>
+            <button v-if="formIsValid" v-on:click="sendForm" class="submit-btn">Envoyer</button>
             <div v-if="!formIsValid" class="submit-btn disabled">Envoyer</div>
 
         </form>
@@ -49,8 +57,11 @@
 
 <script>
 
+import modaleBox from '../components/modale.vue'
+
 export default {
     name: 'contactForm',
+    components: { modaleBox },
     computed : {
         formIsValid(){
             if(this.nameIsValid && this.firstNameIsValid && this.phoneIsValid && this.emailIsValid){
@@ -73,6 +84,7 @@ export default {
             nameIsValid : false,
             email : '',
             emailIsValid : false,
+            message : '',
 
             nameError : '',
             firstNameError : '',
@@ -81,8 +93,11 @@ export default {
             
             nameRegexp : /^[a-zéèôöîïûùü' -]{2,50}$/i,
             emailRegexp : /^[a-z0-9.-_]+[@]{1}[a-z0-9.-_]+[.]{1}[a-z]{2,10}$/gi,
-            phoneRegexp : /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/
+            phoneRegexp : /^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/,
 
+            modaleMessage: 'Message envoyé !',
+
+            showModale : false,
         }
     },
     methods : {
@@ -129,6 +144,20 @@ export default {
         sendForm(e){
 
             e.preventDefault()
+            this.name = ''
+            this.firstName = ''
+            this.phone = ''
+            this.email = ''
+            this.message = ''
+            this.showModale = true
+            this.nameIsValid = false
+            this.formIsValid = false
+            this.phoneIsValid = false
+            this.emailIsValid = false
+        },
+
+        closeModale(){
+            this.showModale = false
         }
     }
 }

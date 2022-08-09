@@ -1,0 +1,38 @@
+.container {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modale {
+    position: relative;
+    width: 225px;
+    height: 150px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__message {
+        text-align: center;
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        color: $color-secondary;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
