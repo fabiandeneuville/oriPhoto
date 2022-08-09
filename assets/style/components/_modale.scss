@@ -12,9 +12,10 @@
 
 .modale {
     position: relative;
-    width: 225px;
+    width: 240px;
     height: 150px;
     background-color: white;
+    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,6 +23,8 @@
     &__message {
         text-align: center;
         padding: 10px;
+        color: $color-primary;
+        font-weight: 600;
     }
 
     &__close-btn {

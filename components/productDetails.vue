@@ -71,7 +71,7 @@ export default {
             e.preventDefault()
             let quantityPicked = parseInt(this.quantity, 10)
             if(quantityPicked < 1 || quantityPicked > 5 || this.selected === ''){
-                this.modaleMessage = "Veuillez indiquer une quantité comprise en 1 et 5 appareils et sélectionner un objectif"
+                this.modaleMessage = "Veuillez indiquer une quantité comprise entre 1 et 5 et sélectionner un objectif"
                 this.showModale = true
             } else {
                 let product = {
