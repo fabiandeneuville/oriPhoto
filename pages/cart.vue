@@ -21,7 +21,19 @@ import OrderBlock from '../components/orderBlock.vue'
 export default {
 
   components: { pageHeader, PageFooter, OrderBlock },
-    name: 'cartPage'
+    name: 'cartPage',
+    head : {
+      title : 'Panier - oriPhoto',
+      meta : [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Le spécialiste de la vente d\'appareils photo vintage remis à neuf'
+        }
+      ]
+    }
 
 }
 
