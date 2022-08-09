@@ -6,36 +6,36 @@
 
         <div class="order__form__question">
             <label for="firstname">Prénom :</label>
-            <input v-model="firstName" v-on:input="checkFirstNameInput" type="text" name="firstname" id="firstname" placeholder="Prénom" spellcheck="false">
+            <input v-model="firstName" v-on:input="checkFirstNameInput" type="text" name="firstname" id="firstname" placeholder="Jean" spellcheck="false">
             <span class="error">{{ firstNameErrorText }}</span>
         </div>
 
         <div class="order__form__question">
             <label for="name">Nom :</label>
-            <input v-model="name" v-on:input="checkNameInput" type="text" name="name" id="name" placeholder="Nom" spellcheck="false">
+            <input v-model="name" v-on:input="checkNameInput" type="text" name="name" id="name" placeholder="Martin" spellcheck="false">
             <span class="error">{{ nameErrorText }}</span>
         </div>
 
         <div class="order__form__question">
             <label for="address">Adresse :</label>
-            <input v-model="address" v-on:input="checkAddressInput" type="text" name="address" id="address" placeholder="Adresse" spellcheck="false">
+            <input v-model="address" v-on:input="checkAddressInput" type="text" name="address" id="address" placeholder="10 rue Montgallet" spellcheck="false">
             <span class="error">{{ addressErrorText }}</span>
         </div>
 
         <div class="order__form__question">
             <label for="city">Ville :</label>
-            <input v-model="city" v-on:input="checkCityInput" type="text" name="city" id="city" placeholder="XXXXX Ville" spellcheck="false">
+            <input v-model="city" v-on:input="checkCityInput" type="text" name="city" id="city" placeholder="75012 Paris" spellcheck="false">
             <span class="error">{{ cityErrorText }}</span>
         </div>
 
         <div class="order__form__question">
             <label for="email">Email :</label>
-            <input v-model="email" v-on:input="checkEmailInput" type="text" name="email" id="email" placeholder="Adresse Email" spellcheck="false">
+            <input v-model="email" v-on:input="checkEmailInput" type="text" name="email" id="email" placeholder="jean-martin@email.com" spellcheck="false">
             <span class="error">{{ emailErrorText }}</span>
         </div>
 
-        <button v-on:click="sendForm" v-if="formIsValid" class="order__form__submit__btn">Valider</button>
-        <button v-if="!formIsValid" class="order__form__submit__btn disabled">Valider</button>
+        <button v-on:click="sendForm" v-if="formIsValid" class="submit-btn">Valider</button>
+        <div v-if="!formIsValid" class="submit-btn disabled">Valider</div>
 
     </form>
 
@@ -77,7 +77,7 @@ export default {
 
         checkFirstNameInput(){
             if(this.nameRegexp.test(this.firstName)){
-                this.firstNameErrorText = "Ok";
+                this.firstNameErrorText = "";
                 this.firstNameIsValid = true;
             } else {
                 this.firstNameErrorText = "Vous ne pouvez utiliser que des lettres, espaces, - et ' ";
@@ -87,7 +87,7 @@ export default {
 
         checkNameInput(){
             if(this.nameRegexp.test(this.name)){
-                this.nameErrorText = "Ok";
+                this.nameErrorText = "";
                 this.nameIsValid = true;
             } else {
                 this.nameErrorText = "Vous ne pouvez utiliser que des lettres, espaces, - et ' ";
@@ -97,7 +97,7 @@ export default {
 
         checkAddressInput(){
             if(this.addressRegexp.test(this.address)){
-                this.addressErrorText = "Ok";
+                this.addressErrorText = "";
                 this.addressIsValid = true;
             } else {
                 this.addressErrorText = "Vous ne pouvez utiliser que des chiffres, lettres, espaces, - et ' ";
@@ -107,7 +107,7 @@ export default {
 
         checkCityInput(){
             if(this.cityRegexp.test(this.city)){
-                this.cityErrorText = "Ok";
+                this.cityErrorText = "";
                 this.cityIsValid = true;
             } else {
                 this.cityErrorText = "Veuillez respecter le format CODE POSTAL (5 CHIFFRES) suivi du nom de la VILLE. Exemple : 75012 Paris";
@@ -117,7 +117,7 @@ export default {
 
         checkEmailInput(){
             if(this.emailRegexp.test(this.email)){
-                this.emailErrorText = "Ok";
+                this.emailErrorText = "";
                 this.emailIsValid = true;
             } else {
                 this.emailErrorText = "Veuillez saisir une adresse email valide";
