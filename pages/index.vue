@@ -41,7 +41,7 @@ export default {
         },
         { hid: 'og-title', property: 'og:title', content: 'oriPhoto' },
         { hid: 'og-desc', property: 'og:description', content: 'Le spécialiste de la vente d\'appareils photo vintage remis à neuf' },
-        { hid: 'og-image', property: 'og:image', content: 'https://user-images.githubusercontent.com/94392055/183772602-938e80de-681a-4eff-9665-f7c414ae7a7b.png' },
+        { hid: 'og-image', property: 'og:image', content: 'https://user-images.githubusercontent.com/94392055/183776093-dc7d3ef8-8692-4b3c-aa31-9d381320971d.png' },
         { hid: 'og-url', property: 'og:url', content: 'https://oriphoto.herokuapp.com/' }
       ]
     }
