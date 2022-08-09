@@ -152,9 +152,9 @@ export default {
                 products
             })
             .then((response) => {
-                this.$store.commit('clearCart')
                 this.$store.commit('setOrderId', response.data.orderId)
                 this.$router.push('/confirmation')
+                this.$store.commit('clearCart')
             })
             .catch(error => {
                 console.log(error)
