@@ -9,3 +9,5 @@ Les principaux avantages que j'ai trouvé dans le fait de développer avec Nuxt.
 - la lisibilité incroyable de sa [documentation](https://nuxtjs.org/)
 - la gestion des routes extrêmement simple (un simple dossier /pages et Nuxt se charge du reste
 - la possibilité de créer facilement les balises META pour les pages dynamiques
+
+L'application hébergée sur Heroku est visible [ici](https://oriphoto.herokuapp.com/).
