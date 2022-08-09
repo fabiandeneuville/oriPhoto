@@ -11,3 +11,5 @@ Les principaux avantages que j'ai trouvé dans le fait de développer avec Nuxt.
 - la possibilité de créer facilement les balises META pour les pages dynamiques
 
 L'application hébergée sur Heroku est visible [ici](https://oriphoto.herokuapp.com/).
+
+![oriPhoto](https://user-images.githubusercontent.com/94392055/183772602-938e80de-681a-4eff-9665-f7c414ae7a7b.png)
