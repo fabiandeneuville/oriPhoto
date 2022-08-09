@@ -150,14 +150,11 @@ export default {
             this.email = ''
             this.message = ''
             this.showModale = true
-            this.nameIsValid = false
-            this.formIsValid = false
-            this.phoneIsValid = false
-            this.emailIsValid = false
         },
 
         closeModale(){
             this.showModale = false
+            this.$router.push('/')
         }
     }
 }
