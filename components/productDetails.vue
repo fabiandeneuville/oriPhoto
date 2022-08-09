@@ -2,6 +2,13 @@
     
      <div class="product__details">
 
+            <modale-box
+            v-if="showModale"
+            v-bind:message="modaleMessage"
+            v-on:closeModale="closeModale"
+            >
+            </modale-box>
+
             <div class="product__details__description">
 
                 <div class="product__details__description__image">
@@ -29,7 +36,6 @@
                     <input v-model="quantity" class="product__details__options__form__input" type="number" min="1" max="5" value="1" name="quantity" id="quantity" required>
                     <button v-on:click="addToCart" class="product__details__options__form__button" title="Ajouter au panier"><fa icon="cart-arrow-down"/></button>
                 </form>
-                <p class="product__details__options__confirmation-message">{{ message }}</p>
             </div>
 
     </div>
@@ -38,13 +44,17 @@
 
 <script>
 
+import modaleBox from '../components/modale.vue'
+
 export default {
     name: 'productDetails',
+    components : { modaleBox },
     data(){
         return {
-            message: '',
+            modaleMessage: '',
             quantity: '1',
-            selected: ''
+            selected: '',
+            showModale : false
         }
     },
     props : [
@@ -61,7 +71,8 @@ export default {
             e.preventDefault()
             let quantityPicked = parseInt(this.quantity, 10)
             if(quantityPicked < 1 || quantityPicked > 5 || this.selected === ''){
-                this.message = "Veuillez indiquer une quantité comprise en 1 et 5 appareils et sélectionner un objectif"
+                this.modaleMessage = "Veuillez indiquer une quantité comprise en 1 et 5 appareils et sélectionner un objectif"
+                this.showModale = true
             } else {
                 let product = {
                     id : this.id,
@@ -72,9 +83,13 @@ export default {
                     imageUrl : this.imageUrl
                 }
                 this.$store.commit('addToCart', product)
-                this.message = "Ajouté au panier"
+                this.modaleMessage = "Ajouté au panier"
+                this.showModale = true
                 
             }
+        }, 
+        closeModale(){
+            this.showModale = false
         }
     }
 }
