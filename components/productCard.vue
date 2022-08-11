@@ -1,6 +1,6 @@
 <template>
     
-    <NuxtLink v-bind:to="productUrl" class="product__card">
+    <NuxtLink v-bind:to="`product/?id=${id}`" class="product__card">
 
         <div class="product__card__image">
 
@@ -29,11 +29,6 @@ export default {
         'imageUrl',
         'id'
     ],
-    computed : {
-        productUrl(){
-            return `/product/?id=${this.id}`
-        }
-    }
 }
 
 </script>
