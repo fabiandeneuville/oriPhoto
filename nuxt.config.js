@@ -19,8 +19,8 @@ export default {
         }
     },
     publicRuntimeConfig : {
-        service_id : process.env.SERVICE_ID,
-        template_id : process.env.TEMPLATE_ID,
-        public_key : process.env.PUBLIC_KEY
+        service_id : "service_f0q93tf",
+        template_id : "template_p2ec4cg",
+        public_key : "bc-xR8C_vR-ZHqOFM"
     }
 }
