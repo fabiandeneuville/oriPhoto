@@ -19,8 +19,9 @@ export default {
         }
     },
     publicRuntimeConfig : {
-        service_id : "service_f0q93tf",
-        template_id : "template_p2ec4cg",
-        public_key : "bc-xR8C_vR-ZHqOFM"
+        service_id : process.env.SERVICE_ID,
+        contact_template_id : process.env.CONTACT_TEMPLATE_ID,
+        order_template_id : process.env.ORDER_TEMPLATE_ID,
+        public_key : process.env.PUBLIC_KEY
     }
 }

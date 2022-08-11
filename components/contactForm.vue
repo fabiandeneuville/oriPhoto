@@ -173,7 +173,7 @@ export default {
                 message: this.message
             }
 
-            emailjs.send(this.$config.service_id, this.$config.template_id, templateParams, this.$config.public_key)
+            emailjs.send(this.$config.service_id, this.$config.contact_template_id, templateParams, this.$config.public_key)
             .then(() => console.log('Message envoyé !'))
             .catch(() => console.log('Erreur lors de l\'envoi du message'))
 
