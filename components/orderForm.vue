@@ -43,6 +43,8 @@
 
 <script>
 
+import emailjs from '@emailjs/browser'
+
 export default {
     name: 'orderForm',
     data(){
@@ -155,10 +157,29 @@ export default {
                 this.$store.commit('setOrderId', response.data.orderId)
                 this.$router.push('/confirmation')
                 this.$store.commit('clearCart')
+                this.emailOrder(response.data.orderId)
             })
             .catch(error => {
                 console.log(error)
             })
+        }, 
+         emailOrder(orderId){
+
+            emailjs.init(this.$config.public_key)
+
+            let templateParams = {
+                lastName: this.name,
+                firstName: this.firstName,
+                address: this.address,
+                city: this.city,
+                email: this.email,
+                orderId: orderId
+            }
+
+            emailjs.send(this.$config.service_id, this.$config.order_template_id, templateParams, this.$config.public_key)
+            .then(() => console.log('Commande envoyée !'))
+            .catch(() => console.log('Erreur lors de l\'envoi du formulaire'))
+
         }
     }
 }
