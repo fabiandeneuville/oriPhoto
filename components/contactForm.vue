@@ -59,6 +59,8 @@
 
 import modaleBox from '../components/modale.vue'
 
+import emailjs from '@emailjs/browser'
+
 export default {
     name: 'contactForm',
     components: { modaleBox },
@@ -144,17 +146,37 @@ export default {
         sendForm(e){
 
             e.preventDefault()
+            this.emailForm()
             this.name = ''
             this.firstName = ''
             this.phone = ''
             this.email = ''
             this.message = ''
             this.showModale = true
+
+
         },
 
         closeModale(){
             this.showModale = false
             this.$router.push('/')
+        },
+        emailForm(){
+
+            emailjs.init(this.$config.public_key)
+
+            let templateParams = {
+                name: this.name,
+                firstname: this.firstName,
+                phone: this.phone,
+                email: this.email,
+                message: this.message
+            }
+
+            emailjs.send(this.$config.service_id, this.$config.template_id, templateParams, this.$config.public_key)
+            .then(() => console.log('Message envoyé !'))
+            .catch(() => console.log('Erreur lors de l\'envoi du message'))
+
         }
     }
 }
