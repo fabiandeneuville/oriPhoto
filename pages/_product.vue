@@ -2,7 +2,7 @@
     
     <div class="product__page">
 
-        <loader v-if="$fetch.pending"></loader>
+        <loader v-if="loading"></loader>
 
         <page-header></page-header>
 
@@ -43,7 +43,8 @@ export default {
                 price : 0,
                 imageUrl : '',
                 lenses : [],  
-            }
+            },
+            loading: true
         }
     },
     head(){
@@ -63,9 +64,22 @@ export default {
             ]
         }
     },
-    async fetch(){
-        this.product = await fetch(`https://api.orinoco.stevenoyer.fr/api/cameras/${this.$route.query.id}`)
-        .then(response =>  response.json())
+
+    // async fetch(){
+    //     this.product = await fetch(`https://api.orinoco.stevenoyer.fr/api/cameras/${this.$route.query.id}`)
+    //     .then(response =>  response.json())
+    // }
+
+    created(){
+       this.$axios.get(`https://api.orinoco.stevenoyer.fr/api/cameras/${this.$route.query.id}`)
+       .then(response => {
+        this.product = response.data
+        this.loading = false
+       })
+       .catch(() => {
+        this.$router.push('/notFound')
+        this.loading = false
+        })
     }
 }
 

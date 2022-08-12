@@ -1,0 +1,27 @@
+.notFound {
+    background-color: $color-primary;
+
+    &__heading {
+        font-size: 60px;
+        text-align: center;
+        padding: 25px;
+        color: white;
+    }
+
+    &__text {
+        padding: 25px;
+        text-align: center;
+        font-size: 22px;
+        color: white;
+    }
+
+    &__link {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+        padding: 25px;
+        font-size: 18px;
+        color: white;
+        text-align: center;
+    }
+}
