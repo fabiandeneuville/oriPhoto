@@ -65,11 +65,6 @@ export default {
         }
     },
 
-    // async fetch(){
-    //     this.product = await fetch(`https://api.orinoco.stevenoyer.fr/api/cameras/${this.$route.query.id}`)
-    //     .then(response =>  response.json())
-    // }
-
     created(){
        this.$axios.get(`https://api.orinoco.stevenoyer.fr/api/cameras/${this.$route.query.id}`)
        .then(response => {
